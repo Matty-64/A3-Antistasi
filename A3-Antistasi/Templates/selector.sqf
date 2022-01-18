@@ -23,7 +23,7 @@ FIX_LINE_NUMBERS()
 //======================|
 
 private _fileName = "Map\" + toLower worldName + "Info.sqf";
-A3A_climate = ["climate"] call compile preProcessFileLineNumbers _filename;
+A3A_climate = [ "climate" ] call ( compile ( preProcessFileLineNumbers _filename ) );
 
 //======================|
 // Autopick Functions   |
@@ -135,6 +135,7 @@ private _AIFactionEnums = [
     , ["HIDF", A3A_has3CBFactions]
     , ["MACV", A3A_hasVN]
     , ["PAVN", A3A_hasVN]
+	, ["KID United States", true ]
 ];
 private _rebFactionEnums = [
     [_autoPickReb, true]
@@ -144,6 +145,7 @@ private _rebFactionEnums = [
     , ["CNM", A3A_has3CBFactions]
     , ["TKM", A3A_has3CBFactions]
     , ["POF", A3A_hasVN]
+	, ["KID Rebels", true ]
 ];
 private _civFactionEnums = [
     [_autoPickCiv, true]
@@ -228,6 +230,9 @@ private _pickAITemplate = {
                 default { "Templates\Templates\Vanilla\Vanilla_AI_CSAT_Arid.sqf" };
             };
         };
+		
+		// Kid stuff
+		case "KID United States": { "Templates\Templates\Kid\Kid_AI_Gov.sqf" };
     };
 };
 
@@ -259,6 +264,9 @@ private _pickRebTemplate = {
             };
         };
         case "SDK": { "Templates\Templates\Vanilla\Vanilla_Reb_SDK_Tanoa.sqf" };
+		
+		// Kid stuff
+		case "KID Rebels": { "Templates\Templates\Kid\Kid_Reb_Rebels.sqf" };
     };
 };
 

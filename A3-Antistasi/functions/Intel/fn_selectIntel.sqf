@@ -178,7 +178,7 @@ if(_intelType == "Large") then
         };
         case (MONEY):
         {
-            private _money = ((round (random 50)) + (10 * tierWar)) * 100;
+            private _money = ((round (random 300)) + (500 * tierWar)) * 100;
             _text = format ["You found some confidential data, you sold it for %1 on the black market!", _money];
             [0, _money] remoteExec ["A3A_fnc_resourcesFIA",2];
         };

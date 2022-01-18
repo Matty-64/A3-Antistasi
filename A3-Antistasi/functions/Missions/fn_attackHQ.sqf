@@ -98,7 +98,7 @@ else
             [Occupants, 5, 60] remoteExec ["A3A_fnc_addAggression",2];
             [Invaders, 10, 60] remoteExec ["A3A_fnc_addAggression",2];
         };
-		[0,300] remoteExec ["A3A_fnc_resourcesFIA",2];
+		[0,2500] remoteExec ["A3A_fnc_resourcesFIA",2];
 		//[-5,5,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 		{if (isPlayer _x) then {[10,_x] call A3A_fnc_playerScoreAdd}} forEach ([500,0,_positionX,teamPlayer] call A3A_fnc_distanceUnits);
 		};

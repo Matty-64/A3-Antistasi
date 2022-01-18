@@ -20,7 +20,7 @@ if (!isNil "A3A_FFPun_Jailed" && {(getPlayerUID player) in A3A_FFPun_Jailed}) ex
 
 _checkX = false;
 //_distanceX = 500 - (([_boss,false] call A3A_fnc_fogCheck) * 450);
-_distanceX = 500;
+_distanceX = 20;
 
 {if ([_x,_distanceX] call A3A_fnc_enemyNearCheck) exitWith {_checkX = true}} forEach units _groupX;
 
@@ -54,7 +54,7 @@ if (count _positionTel > 0) then
 
 	//if (_base in outpostsFIA) exitWith {hint "You cannot Fast Travel to roadblocks and watchposts"; openMap [false,false]};
 
-	if ([getMarkerPos _base,500] call A3A_fnc_enemyNearCheck) exitWith {["Fast Travel", "You cannot Fast Travel to an area under attack or with enemies in the surrounding."] call A3A_fnc_customHint; openMap [false,false]};
+	if ([getMarkerPos _base,20] call A3A_fnc_enemyNearCheck) exitWith {["Fast Travel", "You cannot Fast Travel to an area under attack or with enemies in the surrounding."] call A3A_fnc_customHint; openMap [false,false]};
 	if (!([player] call A3A_fnc_isMember) && {!([_positionTel] call A3A_fnc_playerLeashCheckPosition)}) exitWith {["Fast Travel", format ["There are no members nearby the target location. You need to be within %1 km of HQ or a member.", ceil (memberDistance/1e3)]] call A3A_fnc_customHint;};
 
 	if (_positionTel distance getMarkerPos _base < 50) then
@@ -64,13 +64,13 @@ if (count _positionTel > 0) then
 		//if (!_esHC) then {disableUserInput true; cutText ["Fast traveling, please wait","BLACK",2]; sleep 2;} else {hcShowBar false;hcShowBar true;hint format ["Moving group %1 to destination",groupID _groupX]; sleep _distanceX;};
 		_forcedX = false;
 		if (!isMultiplayer) then {if (not(_base in forcedSpawn)) then {_forcedX = true; forcedSpawn = forcedSpawn + [_base]}};
-		if (!_esHC) then {disableUserInput true; cutText [format ["Fast traveling, travel time: %1s , please wait", _distanceX],"BLACK",1]; sleep 1;} else {hcShowBar false;hcShowBar true;["Fast Travel", format ["Moving group %1 to destination",groupID _groupX]] call A3A_fnc_customHint; sleep _distanceX;};
+		if (!_esHC) then {disableUserInput true; cutText [format ["Fast traveling to selected destination, you will arrive there in: %1s", _distanceX],"BLACK",1]; sleep 1;} else {hcShowBar false;hcShowBar true;["Fast Travel", format ["Moving group %1 to destination",groupID _groupX]] call A3A_fnc_customHint; sleep _distanceX;};
  		if (!_esHC) then
  			{
  			_timePassed = 0;
  			while {_timePassed < _distanceX} do
  				{
- 				cutText [format ["Fast traveling, travel time: %1s , please wait", (_distanceX - _timePassed)],"BLACK",0.0001];
+ 				cutText [format ["Fast traveling to selected destination, you will arrive there in: %1s", (_distanceX - _timePassed)],"BLACK",0.0001];
  				sleep 1;
  				_timePassed = _timePassed + 1;
  				}

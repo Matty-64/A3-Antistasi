@@ -39,7 +39,7 @@ if (_recruiting) then {
 	}
 	else
     {
-		_response =  "Screw you!";
+		_response =  "Nah bruh.";
 		_modAggro = [0, 0];
 	};
 }

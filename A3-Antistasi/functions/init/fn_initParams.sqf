@@ -25,13 +25,13 @@ Info("Initializing global params");
 // params.hpp should be updated to match this table
 
 A3A_paramTable = [
-    ["gameMode", "gameMode", ["locked", "oldsave"], 1],
+    ["gameMode", "gameMode", ["locked", "oldsave"], 3],
     ["autoSave", "autoSave", [], true],
-    ["autoSaveInterval", "autoSaveInterval", [], 3600],
+    ["autoSaveInterval", "autoSaveInterval", [], 1800],
     ["distanceMission", "mRadius", [], 4000],
     ["skillMult", "AISkill", [], 2],
     ["civTraffic", "civTraffic", [], 2],
-    ["limitedFT", "allowFT", [], true],									// backwards naming...
+    ["limitedFT", "allowFT", [], false],									// backwards naming...
     ["napalmEnabled", "napalmEnabled", [], false],
     ["playerMarkersEnabled", "pMarkers", [], true],
     ["allowUnfairSupports", "allowUnfairSupports", [], false],
@@ -54,20 +54,20 @@ A3A_paramTable = [
     ["allowDLCAoW", "AoW", ["server"], false],
     ["allowDLCVN", "VN", [], false],
 
-    ["membershipEnabled", "membership", [], true],
-    ["switchCom", "switchComm", ["server"], true],						// dead param
-    ["tkpunish", "tkPunish", [], true],
+    ["membershipEnabled", "membership", [], false],
+    ["switchCom", "switchComm", ["server"], false],						// dead param
+    ["tkpunish", "tkPunish", [], false],
     ["memberDistance", "memberDistance", [], 5000],
     ["memberSlots", "memberSlots", ["server"], 20],
 
     ["startWithLongRangeRadio", "startWithLongRangeRadio", [], true],
     ["aceFood", "aceFood", [], false],
-    ["helmetLossChance", "helmetLossChance", [], 33],
-    ["minWeaps", "unlockItem", [], 25],
+    ["helmetLossChance", "helmetLossChance", [], 0],
+    ["minWeaps", "unlockItem", [], 5],
     ["memberOnlyMagLimit", "memberOnlyMagLimit", [], 40],				// dead param
     ["unlockedUnlimitedAmmo", "unlockedUnlimitedAmmo", [], 0],			// these three are not bool for some reason
-    ["allowUnlockedExplosives", "allowUnlockedExplosives", [], 0],
-    ["allowGuidedLaunchers", "allowGuidedLaunchers", [], 0],
+    ["allowUnlockedExplosives", "allowUnlockedExplosives", [], 1],
+    ["allowGuidedLaunchers", "allowGuidedLaunchers", [], 1],
     ["LootToCrateEnabled", "EnableLootToCrate", [], true],
     ["LTCLootUnlocked", "LTCLootUnlocked", [], false],
 
@@ -77,9 +77,9 @@ A3A_paramTable = [
     ["cratePlayerScaling", "cratePlayerScaling", [], true],
 
     ["crateWepTypeMax", "crateWepTypeMax", [], 9],
-    ["crateWepNumMax", "crateWepNumMax", [], 8],
-    ["crateItemTypeMax", "crateItemTypeMax", [], 4],
-    ["crateItemNumMax", "crateItemNumMax", [], 5],
+    ["crateWepNumMax", "crateWepNumMax", [], 15],
+    ["crateItemTypeMax", "crateItemTypeMax", [], 10],
+    ["crateItemNumMax", "crateItemNumMax", [], 15],
     ["crateAmmoTypeMax", "crateAmmoTypeMax", [], 6],
     ["crateAmmoNumMax", "crateAmmoNumMax", [], 20],
     ["crateExplosiveTypeMax", "crateExplosiveTypeMax", [], 2],

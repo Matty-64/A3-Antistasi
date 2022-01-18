@@ -104,7 +104,7 @@ if ((spawner getVariable _markerX != 2) and !(sidesX getVariable [_markerX,sideU
 		{
 
 			[_taskId, "LOG", "SUCCEEDED"] call A3A_fnc_taskSetState;
-			[0,300*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
+			[0,1250*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
 			[1200*_bonus, _sideX] remoteExec ["A3A_fnc_timingCA",2];
 			{if (_x distance _truckX < 500) then {[10*_bonus,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 			[5*_bonus,theBoss] call A3A_fnc_playerScoreAdd;

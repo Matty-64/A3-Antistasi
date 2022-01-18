@@ -129,7 +129,7 @@ else
 	[_taskId, "RES", "SUCCEEDED"] call A3A_fnc_taskSetState;
 	_countX = {(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 150)} count _POWs;
 	_hr = 2 * (_countX);
-	_resourcesFIA = 100 * _countX*_bonus;
+	_resourcesFIA = 1000 * _countX*_bonus;
 	[_hr,_resourcesFIA] remoteExec ["A3A_fnc_resourcesFIA",2];
 	[0,10*_bonus,_positionX] remoteExec ["A3A_fnc_citySupportChange",2];
 	[Occupants, -(_countX * 1.5), 90] remoteExec ["A3A_fnc_addAggression",2];

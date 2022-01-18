@@ -76,7 +76,7 @@ if (spawner getVariable _markerX == 0) then
 			{
 			["TaskFailed", ["", format ["AA Stolen in %1",_nameDest]]] remoteExec ["BIS_fnc_showNotification",_sideX];
 			};
-		[0,300*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
+		[0,1250*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
         [_sideX, 10, 60] remoteExec ["A3A_fnc_addAggression", 2];
 		if (_sideX == Invaders) then
         {

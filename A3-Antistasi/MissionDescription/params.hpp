@@ -50,7 +50,7 @@ class Params
     {
         title = "Game Mode - Do NOT change this mid mission";
         values[] = {9999,1,2,3};
-        texts[] = {"Load from save (Default: Reb vs Gov vs Inv)","Reb vs Gov vs Inv","Reb vs Gov & Inv","Reb vs Gov"};
+        texts[] = {"Load from save (Default: Reb vs Gov)","Reb vs Gov vs Inv","Reb vs Gov & Inv","Reb vs Gov"};
         default = 9999;
     };
     class autoSave
@@ -64,28 +64,28 @@ class Params
     {
         title = "Time between autosaves (in minutes)";
         values[] = {9999,600,1200,1800,3600,5400};
-        texts[] = {"Load from save (Default: 60)","10","20","30","60","90"};
+        texts[] = {"Load from save (Default: 30)","10","20","30","60","90"};
         default = 9999;
     };
     class membership
     {
         title = "Enable Server Membership";
         values[] = {9999,1,0};
-        texts[] = {"Load from save (Default: Yes)","Yes","No"};
+        texts[] = {"Load from save (Default: No)","Yes","No"};
         default = 9999;
     };
     class switchComm
     {
         title = "Enable Commander Switch (highest ranked player)";
         values[] = {9999,1,0};
-        texts[] = {"Load from save (Default: Yes)","Yes","No"};
+        texts[] = {"Load from save (Default: No)","Yes","No"};
         default = 9999;
     };
     class tkPunish
     {
         title = "Enable Teamkill Punish";
         values[] = {9999,1,0};
-        texts[] = {"Load from save (Default: Yes)","Yes","No"};
+        texts[] = {"Load from save (Default: No)","Yes","No"};
         default = 9999;
     };
     class mRadius
@@ -112,8 +112,8 @@ class Params
     class unlockItem
     {
         title = "Number of the same item required to unlock";
-        values[] = {9999,15,25,40,1e6};
-        texts[] = {"Load from save (Default: 25)","15","25","40","1 000 000"};
+        values[] = {9999,1,5,10,15,25,40,1e6};
+        texts[] = {"Load from save (Default: 5)","1","5","10","15","25","40","1 000 000"};
         default = 9999;
     };
     class memberOnlyMagLimit
@@ -148,7 +148,7 @@ class Params
     {
         title = "Fast Travel Targets Allowed";
         values[] = {9999,0,1};
-        texts[] = {"Load from save (Default: Airports & HQ)","Any friendly position","Only Airports & HQ"};
+        texts[] = {"Load from save (Default: Any friendly position)","Any friendly position","Only Airports & HQ"};
         default = 9999;
     };
     class napalmEnabled
@@ -169,14 +169,14 @@ class Params
     {
         title = "Should Guided Launchers become unlocked?";
         values[] = {9999,1,0};
-        texts[] = {"Load from save (Default: No)","Yes","No"};
+        texts[] = {"Load from save (Default: Yes)","Yes","No"};
         default = 9999;
     };
     class allowUnlockedExplosives
     {
         title = "Should Explosives become unlocked?";
         values[] = {9999,1,0};
-        texts[] = {"Load from save (Default: No)","Yes","No"};
+        texts[] = {"Load from save (Default: Yes)","Yes","No"};
         default = 9999;
     };
     class startWithLongRangeRadio
@@ -197,7 +197,7 @@ class Params
     {
         title = "Chance of helmet loss on headshots";
         values[] = {9999,0,33,66,100};
-        texts[] = {"Load from save (Default: Sometimes)","Never","Sometimes","Often","Always"};
+        texts[] = {"Load from save (Default: Never)","Never","Sometimes","Often","Always"};
         default = 9999;
     };
     class Spacer10
@@ -238,29 +238,31 @@ class Params
     class RebelFactionEnum
     {
         title = "Rebel faction (Required content for faction in parentheses)";
-        values[] = {9999, 1,2,3,4,5,6};
-        texts[] = {"Default (Auto)", "FIA", "SDK", "NAPA (RHS)", "CNM (Factions)", "TKM (Factions)", "POF (SOG:PF)"};
+        values[] = {9999, 1,2,3,4,5,6,7};
+        texts[] = {"Default (Auto)", "FIA", "SDK", "NAPA (RHS)", "CNM (Factions)", "TKM (Factions)", "POF (SOG:PF)", "KID Rebels"};
         default = 9999;
     };
     class OccupantsFactionEnum
     {
         title = "Occupants faction (Required content for faction in parentheses)";
-        values[] = {9999, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        values[] = {9999, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21};
         texts[] = {
-            "Default (Auto)", "NATO", "CSAT", "AAF", "LDF (Contact)", "USAF (RHS)", "AFRF (RHS)","CDF (RHS)"
-            , "US Marines (RHS)", "BAF (BAF)", "Coldwar US (Factions)", "Coldwar Soviets (Factions)"
-            , "TKA West (Factions)", "TKA East (Factions)", "ADA (Factions)", "ANA (Factions)", "3CB AAF (Factions)", "MDF (Factions)", "HIDF (Factions)", "MACV (SOG:PF)", "PAVN (SOG:PF)"
+            "Default (Auto)", "NATO", "CSAT", "AAF", "LDF (Contact)", "USAF (RHS)", "AFRF (RHS)","CDF (RHS)",
+            "US Marines (RHS)", "BAF (BAF)", "Coldwar US (Factions)", "Coldwar Soviets (Factions)",
+            "TKA West (Factions)", "TKA East (Factions)", "ADA (Factions)", "ANA (Factions)", "3CB AAF (Factions)", "MDF (Factions)", "HIDF (Factions)", "MACV (SOG:PF)", "PAVN (SOG:PF)",
+			"KID United States"
         };
         default = 9999;
     };
     class InvadersFactionEnum
     {
         title = "Invaders faction (Required content for faction in parentheses)";
-        values[] = {9999, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+        values[] = {9999, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21};
         texts[] = {
-            "Default (Auto)", "NATO", "CSAT", "AAF", "LDF (Contact)", "USAF (RHS)", "AFRF (RHS)","CDF (RHS)"
-            , "US Marines (RHS)", "BAF (BAF)", "Coldwar US (Factions)", "Coldwar Soviets (Factions)"
-            , "TKA West (Factions)", "TKA East (Factions)", "ADA (Factions)", "ANA (Factions)", "3CB AAF (Factions)", "MDF (Factions)", "HIDF (Factions)", "MACV (SOG:PF)", "PAVN (SOG:PF)"
+            "Default (Auto)", "NATO", "CSAT", "AAF", "LDF (Contact)", "USAF (RHS)", "AFRF (RHS)","CDF (RHS)",
+            "US Marines (RHS)", "BAF (BAF)", "Coldwar US (Factions)", "Coldwar Soviets (Factions)",
+            "TKA West (Factions)", "TKA East (Factions)", "ADA (Factions)", "ANA (Factions)", "3CB AAF (Factions)", "MDF (Factions)", "HIDF (Factions)", "MACV (SOG:PF)", "PAVN (SOG:PF)",
+			"KID United States"
         };
         default = 9999;
     };
@@ -429,7 +431,7 @@ class Params
     {
         title = "Maximum Weapon Quantity in Crates";
         values[] = {9999,0,1,3,5,8,10,15};
-        texts[] = {"Load from save (Default: 8)","None","1","3","5","8","10","15"};
+        texts[] = {"Load from save (Default: 15)","None","1","3","5","8","10","15"};
         default = 9999;
     };
     class Spacer1
@@ -443,14 +445,14 @@ class Params
     {
         title = "Maximum Item Types in Crates";
         values[] = {9999,0,2,4,9};
-        texts[] = {"Load from save (Default: 5)","1","3","5","10"};
+        texts[] = {"Load from save (Default: 10)","1","3","5","10"};
         default = 9999;
     };
     class crateItemNumMax
     {
         title = "Maximum Item Quantity in Crates";
         values[] = {9999,0,1,3,5,10,15};
-        texts[] = {"Load from save (Default: 5)","None","1","3","5","10","15"};
+        texts[] = {"Load from save (Default: 15)","None","1","3","5","10","15"};
         default = 9999;
     };
     class Spacer2

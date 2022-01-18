@@ -300,7 +300,7 @@ if (_convoyType == "Ammunition") then
     else
     {
         [true, false, 1800*_bonus, 5*_bonus, 25, 120, "ammo"] call _fnc_applyResults;
-        [0,300*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
+        [0,1000*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
         {
             if (isPlayer _x) then
             {
@@ -352,7 +352,7 @@ if (_convoyType == "Prisoners") then
             _countX = {(alive _x) and (_x distance _posHQ < 150)} count _POWs;
             [true, false, 0, _bonus*_countX/2, 10, 120, "prisoner"] call _fnc_applyResults;
 
-            [_countX,_countX*300*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
+            [_countX,_countX*900*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
             [0,10*_bonus,_posSpawn] remoteExec ["A3A_fnc_citySupportChange",2];
             {[_countX,_x] call A3A_fnc_playerScoreAdd} forEach (allPlayers - (entities "HeadlessClient_F"));
         };

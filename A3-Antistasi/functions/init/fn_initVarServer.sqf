@@ -44,9 +44,9 @@ DECLARE_SERVER_VAR(distanceSPWN2, distanceSPWN*0.5);
 //Quantity of Civs to spawn in (most likely per client - Bob Murphy 26.01.2020)
 //DECLARE_SERVER_VAR(civPerc, 5);
 //The furthest distance the AI can attack from using helicopters or planes
-DECLARE_SERVER_VAR(distanceForAirAttack, 10000);
+DECLARE_SERVER_VAR(distanceForAirAttack, 10000 );
 //The furthest distance the AI can attack from using trucks and armour
-DECLARE_SERVER_VAR(distanceForLandAttack, if (A3A_hasIFA) then {5000} else {3000});
+DECLARE_SERVER_VAR(distanceForLandAttack, 5000 );
 //Max units we aim to spawn in. It's not very strictly adhered to.
 //DECLARE_SERVER_VAR(maxUnits, 140);
 
@@ -111,7 +111,7 @@ DECLARE_SERVER_VAR(reportedVehs, []);
 //Initial HR
 server setVariable ["hr",8,true];
 //Initial faction money pool
-server setVariable ["resourcesFIA",1000,true];
+server setVariable ["resourcesFIA",10000,true];
 // Time of last garbage clean. Note: serverTime may not reset to zero if server was not restarted. Therefore, it should capture the time at start of mission.
 DECLARE_SERVER_VAR(A3A_lastGarbageCleanTime, serverTime);
 

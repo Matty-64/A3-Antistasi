@@ -157,7 +157,7 @@ if (_sideX == Occupants) then
 		[_taskId, "RES", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		_countX = {(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 150)} count _POWs;
 		_hr = _countX;
-		_resourcesFIA = 100 * _countX;
+		_resourcesFIA = 1000 * _countX;
 		[_hr,_resourcesFIA*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
 		[Occupants, -10, 60] remoteExec ["A3A_fnc_addAggression",2];
 		{if (_x distance getMarkerPos respawnTeamPlayer < 500) then {[_countX*_bonus,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
@@ -183,7 +183,7 @@ else
 		[_taskId, "RES", "SUCCEEDED"] call A3A_fnc_taskSetState;
 		_countX = {(alive _x) and (_x distance getMarkerPos respawnTeamPlayer < 150)} count _POWs;
 		_hr = _countX;
-		_resourcesFIA = 100 * _countX;
+		_resourcesFIA = 1000 * _countX;
 		[_hr,_resourcesFIA*_bonus] remoteExec ["A3A_fnc_resourcesFIA",2];
 		{if (_x distance getMarkerPos respawnTeamPlayer < 500) then {[_countX*_bonus,_x] call A3A_fnc_playerScoreAdd}} forEach (allPlayers - (entities "HeadlessClient_F"));
 		[round (_countX*_bonus/2),theBoss] call A3A_fnc_playerScoreAdd;
